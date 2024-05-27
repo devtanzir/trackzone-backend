@@ -10,9 +10,8 @@ import {
 const router = Router();
 
 /**
- * @route /api/users?sort= ['by','name']
+ * @route /api/v1/event/:clockId
  * @method GET
- * @visibility public
  */
 
 router.get("/:clockId", getEventsByClockId);

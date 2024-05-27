@@ -21,9 +21,8 @@ router.patch("/:clockId", patchClockById);
 router.delete("/:clockId", deleteClockById);
 
 /**
- * @route
+ * @route /api/v1/clock
  * @method GET
- * @visibility public
  */
 
 router.get("/", getClocks);
