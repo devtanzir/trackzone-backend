@@ -1,8 +1,10 @@
 import Express from "express";
 import { connectDb } from "./db.js";
+import routes from "./routes/index.js";
 
 const app = Express();
 app.use(Express.json());
+app.use(routes);
 
 app.get("/", (_req, res) => {
   const obj = {
@@ -16,6 +18,14 @@ app.get("/", (_req, res) => {
     },
   };
   res.json(obj);
+});
+
+app.use((err, _req, res, _next) => {
+  console.log(err);
+  const message = err.message ? err.message : "server error Occurred";
+  const status = err.status ? err.status : 500;
+
+  res.status(status).json({ message });
 });
 
 connectDb("mongodb://localhost:27017/track-zone").then(() => {

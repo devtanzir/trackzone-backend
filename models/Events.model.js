@@ -2,6 +2,10 @@ import { Schema, model } from "mongoose";
 
 const eventsSchema = new Schema(
   {
+    clockId: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
