@@ -12,17 +12,7 @@ app.use(cors());
 app.use(routes);
 
 app.get("/", (_req, res) => {
-  const obj = {
-    name: "tanzir",
-    email: "tanzir@example.com",
-    post: 3711,
-    address: {
-      house: 15,
-      road: "04",
-      area: "rupnagar R/A",
-    },
-  };
-  res.json(obj);
+  res.json({ message: "there is nothing to show" });
 });
 
 app.use((err, _req, res, _next) => {
