@@ -24,8 +24,9 @@ app.use((err, _req, res, _next) => {
 });
 
 const PORT = process.env.PORT || 8000 || 5001;
+const URL = process.env.DATABASE_URL;
 
-connectDb("mongodb://localhost:27017/track-zone").then(() => {
+connectDb(URL).then(() => {
   console.log("database connected");
   app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
