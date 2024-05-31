@@ -1,11 +1,14 @@
 import { findUserByProperty, findUsers } from "../services/Model.service.js";
-import { clockService } from "../services/clock.service.js";
+import {
+  clockService,
+  deleteClockAndEventService,
+} from "../services/clock.service.js";
 import error from "../utils/error.js";
 
 const createClockController = async (req, res, next) => {
   const { title, timezone, offset } = req.body;
   try {
-    if (!title || !timezone || !offset) {
+    if (!title || !timezone) {
       return res.status(400).json({ message: "invalid data" });
     }
     const clock = await clockService({ title, timezone, offset });
@@ -47,11 +50,7 @@ const deleteClockById = async (req, res, next) => {
   const { clockId } = req.params;
 
   try {
-    const clock = await findUserByProperty("_id", clockId);
-    if (!clock) {
-      throw error("Clock Not Found", 404);
-    }
-    await clock.deleteOne(clock);
+    await deleteClockAndEventService(clockId);
     return res.status(203).send();
   } catch (e) {
     next(e);

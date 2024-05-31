@@ -20,4 +20,7 @@ export const findEventsByProperty = (key, value) => {
   }
   return Events.findOne({ [key]: value });
 };
+export const findEvents = () => {
+  return Events.find();
+};
 // export const deleteAllUser

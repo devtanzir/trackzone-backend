@@ -5,6 +5,7 @@ import {
   deleteEventsByClockId,
   getEventsByClockId,
   patchEventById,
+  getEvents,
 } from "../controller/event.controller.js";
 
 const router = Router();
@@ -37,5 +38,12 @@ router.delete("/delete-all/:clockId", deleteEventsByClockId);
  * @method POST
  */
 router.post("/:clockId", createEventController);
+
+/**
+ * @route /api/v1/event/
+ * @method GET
+ */
+
+router.get("/", getEvents);
 
 export default router;

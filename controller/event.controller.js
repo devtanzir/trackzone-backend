@@ -2,6 +2,7 @@ import {
   eventService,
   findClockService,
   findEventService,
+  findEvents,
   findEventsByProperty,
 } from "../services/events.service.js";
 import error from "../utils/error.js";
@@ -98,10 +99,19 @@ const deleteEventsByClockId = async (req, res, next) => {
     next(e);
   }
 };
+const getEvents = async (_req, res, next) => {
+  try {
+    const events = await findEvents();
+    return res.status(200).json(events);
+  } catch (e) {
+    next(e);
+  }
+};
 export {
   createEventController,
   getEventsByClockId,
   patchEventById,
   deleteEventById,
   deleteEventsByClockId,
+  getEvents,
 };
