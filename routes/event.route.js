@@ -20,22 +20,26 @@ router.get("/:clockId", getEventsByClockId);
 /**
  * Update event by id
  * @method PATCH
+ * @route /api/v1/event/:eventId
  */
 router.patch("/:eventId", patchEventById);
 /**
  * Delete event by id
  * @method DELETE
+ * @route /api/v1/event/:eventId
  */
 router.delete("/:eventId", deleteEventById);
 /**
  * Delete all event by clock id
  * @method DELETE
+ * @route /api/v1/event/delete-all/:clockId
  */
 router.delete("/delete-all/:clockId", deleteEventsByClockId);
 
 /**
  * Create clock
  * @method POST
+ * @route /api/v1/event/:clockId
  */
 router.post("/:clockId", createEventController);
 

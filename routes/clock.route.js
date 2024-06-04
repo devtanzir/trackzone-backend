@@ -11,12 +11,14 @@ const router = Router();
 /**
  * Update clock by id
  * @method PATCH
+ * @route /api/v1/clock/:clockId
  */
 router.patch("/:clockId", patchClockById);
 
 /**
  * Delete clock by id
  * @method DELETE
+ * @route /api/v1/clock/:clockId
  */
 router.delete("/:clockId", deleteClockById);
 
@@ -30,6 +32,7 @@ router.get("/", getClocks);
 /**
  * Create clock
  * @method POST
+ * @route /api/v1/clock/clock-create
  */
 router.post("/clock-create", createClockController);
 
