@@ -6,7 +6,7 @@ import {
   getEventsByClockId,
   patchEventById,
   getEvents,
-} from "../controller/event.controller.js";
+} from "../controller/eventController.js";
 
 const router = Router();
 

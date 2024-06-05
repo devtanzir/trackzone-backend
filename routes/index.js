@@ -1,6 +1,6 @@
 import { Router } from "express";
-import clockRoute from "./clock.route.js";
-import eventRoute from "./event.route.js";
+import clockRoute from "./clockRoute.js";
+import eventRoute from "./eventRoute.js";
 
 export const router = Router();
 

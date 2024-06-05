@@ -1,4 +1,4 @@
-import { Events } from "../models/events.model.js";
+import { Events } from "../models/EventsModel.js";
 import { findUserByProperty } from "./ModelService.js";
 /**
  * event service

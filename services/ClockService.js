@@ -1,4 +1,4 @@
-import { Clocks } from "../models/clocks.model.js";
+import { Clocks } from "../models/ClocksModel.js";
 import { findUserByProperty } from "./ModelService.js";
 import { findEventService } from "./EventsService.js";
 

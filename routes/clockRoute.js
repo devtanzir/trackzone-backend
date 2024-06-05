@@ -4,7 +4,7 @@ import {
   deleteClockById,
   getClocks,
   patchClockById,
-} from "../controller/clock.controller.js";
+} from "../controller/clockController.js";
 
 const router = Router();
 
