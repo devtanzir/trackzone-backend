@@ -1,5 +1,5 @@
 import { Events } from "../models/events.model.js";
-import { findUserByProperty } from "./Model.service.js";
+import { findUserByProperty } from "./ModelService.js";
 /**
  * event service
  * @param {*} param0

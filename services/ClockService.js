@@ -1,6 +1,6 @@
 import { Clocks } from "../models/clocks.model.js";
-import { findUserByProperty } from "./Model.service.js";
-import { findEventService } from "./events.service.js";
+import { findUserByProperty } from "./ModelService.js";
+import { findEventService } from "./EventsService.js";
 
 /**
  * clock service

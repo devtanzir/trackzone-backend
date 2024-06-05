@@ -4,7 +4,7 @@ import {
   findEventService,
   findEvents,
   findEventsByProperty,
-} from "../services/events.service.js";
+} from "../services/EventsService.js";
 import error from "../utils/error.js";
 
 /**

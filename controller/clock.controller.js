@@ -1,8 +1,8 @@
-import { findUserByProperty, findUsers } from "../services/Model.service.js";
+import { findUserByProperty, findUsers } from "../services/ModelService.js";
 import {
   clockService,
   deleteClockAndEventService,
-} from "../services/clock.service.js";
+} from "../services/ClockService.js";
 import error from "../utils/error.js";
 
 /**
