@@ -1,10 +1,19 @@
 import Express from "express";
-import { connectDb } from "./db.js";
-import routes from "./routes/index.js";
+import { connectDb } from "../db.js";
+import routes from "../routes/index.js";
 import dotenv from "dotenv";
 import cors from "cors";
 // dot env config
 dotenv.config();
+
+// Validate environment variables
+const requiredEnvVars = ["PORT", "DATABASE_URL"];
+requiredEnvVars.forEach((varName) => {
+  if (!process.env[varName]) {
+    console.error(`Environment variable ${varName} is missing`);
+    process.exit(1);
+  }
+});
 
 const app = Express();
 // json middleware
@@ -27,7 +36,7 @@ app.use((err, _req, res, _next) => {
   res.status(status).json({ message });
 });
 // get data from env file
-const PORT = process.env.PORT || 8000 || 5001;
+const PORT = process.env.PORT || 8000;
 const URL = process.env.DATABASE_URL;
 
 // invoke connectDB function
