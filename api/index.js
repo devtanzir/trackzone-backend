@@ -7,7 +7,7 @@ import cors from "cors";
 dotenv.config();
 
 // Validate environment variables
-const requiredEnvVars = ["PORT", "DATABASE_URL"];
+const requiredEnvVars = ["PORT", "DATABASE_URI"];
 requiredEnvVars.forEach((varName) => {
   if (!process.env[varName]) {
     console.error(`Environment variable ${varName} is missing`);
@@ -37,10 +37,10 @@ app.use((err, _req, res, _next) => {
 });
 // get data from env file
 const PORT = process.env.PORT || 8000;
-const URL = process.env.DATABASE_URL;
+const URI = process.env.DATABASE_URI;
 
 // invoke connectDB function
-connectDb(URL).then(() => {
+connectDb(URI).then(() => {
   console.log("database connected");
   app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
